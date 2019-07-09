@@ -22,3 +22,13 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+thisYear = date.today().year
+
+args = sys.argv
+if len(args) == 2:
+  print (calendar.month(thisYear, int(args[1])))
+elif len(args) == 3:
+  print (calendar.month(int(args[2]), int(args[1])))
+else:
+  print('Please enter arguments in the format \'%s [month as 1-12] [4 digit year]\'.' % (args[0]))
